@@ -1,36 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Handy Lady LLC</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f8f8f8;
+            color: #222;
+        }
+
+        .hero {
+            max-width: 900px;
+            margin: 60px auto;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .hero img {
+            width: 350px;
+            max-width: 90%;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+
+        .tagline {
+            font-size: 1.4rem;
+            line-height: 1.6;
+            max-width: 700px;
+            margin: auto;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 40px;
+            background: #7B2CBF;
+            color: white;
+            text-decoration: none;
+            padding: 18px 36px;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: background 0.2s;
+        }
+
+        .button:hover {
+            background: #5A189A;
+        }
+    </style>
+</head>
 </head>
 <body>
 
-    <div style="text-align: center; margin-top: 40px;">
+    <div class="hero">
 
-    <img src="HandyLadyLLC_Logo.png" alt="Handy Lady LLC Logo" width="350">
+    <img src="HandyLadyLLC_Logo.png" alt="Handy Lady LLC Logo">
 
     <h1>Need a Hand?</h1>
 
-    <p style="font-size: 1.3em;">
+    <p class="tagline">
         Painting, repairs, maintenance, organization,
         furniture assembly, and whatever's next on your to-do list.
     </p>
 
-    <p>
-        <a href="#" style="
-            display:inline-block;
-            background:#6F2DBD;
-            color:white;
-            text-decoration:none;
-            padding:15px 30px;
-            border-radius:8px;
-            font-size:1.1em;
-            font-weight:bold;">
-            Tell Me How I Can Help
-        </a>
-    </p>
+    <a class="button" href="#">
+        Tell Me How I Can Help
+    </a>
 
 </div>
   
