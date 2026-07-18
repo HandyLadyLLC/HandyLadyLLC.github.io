@@ -1,50 +1,64 @@
-<style>
-        body {
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            background: #f8f8f8;
-            color: #222;
-        }
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f8f8f8;
+    color: #222;
+}
 
-        .hero {
-            max-width: 900px;
-            margin: 60px auto;
-            text-align: center;
-            padding: 20px;
-        }
+nav {
+    background: white;
+    border-bottom: 1px solid #ddd;
+    padding: 18px;
+    text-align: center;
+}
 
-        .hero img {
-            width: 350px;
-            max-width: 90%;
-        }
+nav a {
+    color: #222;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 16px;
+}
 
-        h1 {
-            font-size: 3rem;
-            margin-top: 30px;
-            margin-bottom: 20px;
-        }
+nav a:hover {
+    color: #7B2CBF;
+}
 
-        .tagline {
-            font-size: 1.4rem;
-            line-height: 1.6;
-            max-width: 700px;
-            margin: auto;
-        }
+.hero {
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 20px;
+    text-align: center;
+}
 
-        .button {
-            display: inline-block;
-            margin-top: 40px;
-            background: #7B2CBF;
-            color: white;
-            text-decoration: none;
-            padding: 18px 36px;
-            border-radius: 8px;
-            font-size: 1.2rem;
-            font-weight: bold;
-            transition: background 0.2s;
-        }
+.hero img {
+    width: 350px;
+    max-width: 90%;
+}
 
-        .button:hover {
-            background: #5A189A;
-        }
-    </style>
+h1 {
+    font-size: 3rem;
+    margin-top: 30px;
+}
+
+.tagline {
+    font-size: 1.35rem;
+    max-width: 700px;
+    margin: 25px auto;
+    line-height: 1.6;
+}
+
+.button {
+    display: inline-block;
+    margin-top: 30px;
+    background: #7B2CBF;
+    color: white;
+    padding: 16px 34px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 1.15rem;
+    font-weight: bold;
+}
+
+.button:hover {
+    background: #5A189A;
+}
