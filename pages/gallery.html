@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gallery | Handy Lady LLC</title>
+<meta name="description" content="Before-and-after photos of Handy Lady LLC jobs around St. Petersburg, FL.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Work+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/Style.css">
+</head>
+<body>
+
+<header class="site-header">
+<nav>
+  <a class="brand" href="../index.html">
+    <img src="../Images/HandyLadyLLC_Logo.png" alt="Handy Lady LLC logo">
+    Handy Lady LLC
+  </a>
+  <button class="nav-toggle" aria-label="Menu">☰</button>
+  <ul class="nav-links">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="rates.html">Rates</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a class="cta" href="contact.html">Need a Hand?</a></li>
+  </ul>
+</nav>
+</header>
+
+<div class="page-hero">
+  <span class="eyebrow">Gallery</span>
+  <h1>Before &amp; after.</h1>
+  <p class="tagline" style="max-width:60ch;color:var(--ink-soft);">
+    A running look at completed jobs. Ask about the $10 same-day
+    discount for allowing a photo of your project to go up here.
+  </p>
+</div>
+
+<div class="section" style="padding-top:12px;">
+  <!--
+    To add a photo: drop the image file in /Images/gallery/ and copy
+    one of the <figure> blocks below inside the .grid, updating the
+    src and figcaption.
+
+    <figure class="card" style="padding:0;overflow:hidden;">
+      <img src="../Images/gallery/example.jpg" alt="Describe the job">
+      <figcaption style="padding:16px;color:var(--ink-soft);">Short description of the job</figcaption>
+    </figure>
+  -->
+  <div class="gallery-empty">
+    <h3>Photos are on their way.</h3>
+    <p>
+      This page is ready for before-and-after shots as jobs wrap up.
+      In the meantime, check the
+      <a href="https://www.facebook.com/HandyLadyLLC/" target="_blank" rel="noopener">Handy Lady LLC Facebook page</a>
+      for the latest, or reach out directly with questions about past work.
+    </p>
+    <a class="button" href="contact.html" style="margin-top:10px;">Tell Me How I Can Help</a>
+  </div>
+</div>
+
+<footer>
+  <p>Handy Lady LLC &mdash; St. Petersburg, FL &amp; within a 40-mile round trip of the Lowe's on 25th St. N.</p>
+  <p>&copy; <span id="year"></span> Handy Lady LLC. All rights reserved.</p>
+</footer>
+
+<script src="../js/main.js"></script>
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
