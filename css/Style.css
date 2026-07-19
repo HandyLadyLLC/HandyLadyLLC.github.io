@@ -103,7 +103,7 @@ nav {
   font-size: 1.2rem;
 }
 
-.brand img { height: 56px; width: auto; border-radius: 6px; }
+.brand img { height: 56px; width: auto; border-radius: 0px; }
 
 .nav-links {
   display: flex;
