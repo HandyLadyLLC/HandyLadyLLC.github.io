@@ -12,8 +12,8 @@
   --ink: #F1ECFA;
   --ink-soft: #C9BFE0;
   --brand: #B79FE0;
-  --brand-dark: #7B56B8;
-  --brand-deep: #5A3D8C;
+  --brand-dark: #5C4B78;
+  --brand-deep: #423655;
   --amber: #F0B15B;
   --amber-dark: #D89440;
   --line: #453D5E;
@@ -126,8 +126,7 @@ nav {
   border-radius: 6px;
 }
 
-.nav-links a:hover,
-.nav-links a.active {
+.nav-links a:hover {
   color: var(--amber);
   background: var(--line-soft);
 }
