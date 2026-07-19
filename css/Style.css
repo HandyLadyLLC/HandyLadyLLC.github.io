@@ -246,7 +246,7 @@ nav {
 /* accent band — a warm purple wash to separate this section from the page,
    without ever going back to a bright white panel */
 .strip {
-  background: linear-gradient(180deg, var(--brand-deep), #4A3170);
+  background: #523559;
   color: var(--ink);
 }
 .strip .eyebrow { color: var(--amber); }
