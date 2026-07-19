@@ -12,8 +12,10 @@
   --ink: #F1ECFA;
   --ink-soft: #C9BFE0;
   --brand: #578A74;
-  --brand-dark: #345247;
-  --brand-deep: #51406E;
+  /* Buttons */
+  --brand-dark: #51406E;
+ /* Buttons Highlighted or Button Font? */
+  --brand-deep: #345247;
   --amber: #65578A;
   --amber-dark: #524770;
   --line: #453D5E;
