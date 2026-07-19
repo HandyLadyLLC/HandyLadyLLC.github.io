@@ -1,27 +1,32 @@
 /* ==========================================================================
    Handy Lady LLC — design tokens
+   Warm dark theme: soft dark backgrounds (not pure black), soft off-white
+   text (not pure white) to reduce glare, generous line-height and spacing
+   for easier reading.
    ========================================================================== */
 :root {
   /* color */
-  --bg: #F7F5FB;
-  --surface: #FFFFFF;
-  --ink: #211F2B;
-  --ink-soft: #57516E;
-  --brand: #7B2CBF;
-  --brand-dark: #5A189A;
-  --amber: #E8A33D;
-  --amber-dark: #C97F1A;
-  --line: #E3DDF0;
-  --line-soft: #EDE9F6;
+  --bg: #211E2C;
+  --surface: #2B2740;
+  --surface-alt: #332C4A;
+  --ink: #F1ECFA;
+  --ink-soft: #C9BFE0;
+  --brand: #C9A6F5;
+  --brand-dark: #A97FE8;
+  --brand-deep: #5A3D8C;
+  --amber: #F0B15B;
+  --amber-dark: #D89440;
+  --line: #453D5E;
+  --line-soft: #362F49;
 
   /* type */
   --font-display: "Fraunces", Georgia, serif;
-  --font-body: "Work Sans", Arial, Helvetica, sans-serif;
+  --font-body: "Atkinson Hyperlegible", "Work Sans", Arial, Helvetica, sans-serif;
   --font-mono: "IBM Plex Mono", "Courier New", monospace;
 
   /* layout */
   --max: 1080px;
-  --radius: 10px;
+  --radius: 12px;
 }
 
 * { box-sizing: border-box; }
@@ -33,37 +38,45 @@ body {
   font-family: var(--font-body);
   background: var(--bg);
   color: var(--ink);
-  line-height: 1.6;
+  font-size: 1.06rem;
+  line-height: 1.75;
+  letter-spacing: .01em;
 }
 
 img { max-width: 100%; display: block; }
 
-a { color: var(--brand-dark); }
+a { color: var(--brand); text-underline-offset: 3px; }
+a:hover { color: var(--amber); }
 
 h1, h2, h3 {
   font-family: var(--font-display);
   font-weight: 600;
-  line-height: 1.15;
-  margin: 0 0 .5em;
+  line-height: 1.25;
+  letter-spacing: 0;
+  margin: 0 0 .55em;
+  color: var(--ink);
 }
 
-p { margin: 0 0 1em; }
+p {
+  margin: 0 0 1.1em;
+  max-width: 68ch;
+}
 
 .eyebrow {
   font-family: var(--font-mono);
-  font-size: .78rem;
-  letter-spacing: .12em;
+  font-size: .8rem;
+  letter-spacing: .1em;
   text-transform: uppercase;
-  color: var(--brand-dark);
+  color: var(--brand);
   display: block;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 /* ==========================================================================
    Nav
    ========================================================================== */
 .site-header {
-  background: var(--surface);
+  background: #000000;
   border-bottom: 1px solid var(--line);
   position: sticky;
   top: 0;
@@ -90,7 +103,7 @@ nav {
   font-size: 1.2rem;
 }
 
-.brand img { height: 40px; width: auto; }
+.brand img { height: 56px; width: auto; border-radius: 6px; }
 
 .nav-links {
   display: flex;
@@ -112,7 +125,7 @@ nav {
 
 .nav-links a:hover,
 .nav-links a.active {
-  color: var(--brand-dark);
+  color: var(--brand);
   background: var(--line-soft);
 }
 
@@ -124,7 +137,8 @@ nav {
 
 .nav-toggle {
   display: none;
-  background: none;
+  background: var(--surface-alt);
+  color: var(--ink);
   border: 1px solid var(--line);
   border-radius: 6px;
   padding: 8px 10px;
@@ -166,6 +180,7 @@ nav {
 @media (max-width: 760px) {
   .hero { grid-template-columns: 1fr; padding-top: 40px; text-align: center; }
   .hero-art { order: -1; margin: 0 auto; max-width: 260px; }
+  .hero p { margin-left: auto; margin-right: auto; }
 }
 
 .hero h1 { font-size: clamp(2.2rem, 5vw, 3.2rem); }
@@ -188,7 +203,7 @@ nav {
   display: inline-block;
   margin-top: 10px;
   background: var(--brand);
-  color: white;
+  color: #23163B;
   padding: 15px 30px;
   text-decoration: none;
   border-radius: 8px;
@@ -197,14 +212,14 @@ nav {
   border: none;
   cursor: pointer;
 }
-.button:hover { background: var(--brand-dark); }
+.button:hover { background: var(--amber); color: #2B1B00; }
 
 .button.secondary {
   background: transparent;
-  color: var(--brand-dark);
+  color: var(--brand);
   border: 1.5px solid var(--brand);
 }
-.button.secondary:hover { background: var(--line-soft); }
+.button.secondary:hover { background: var(--line-soft); color: var(--brand); }
 
 .button-row { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 20px; }
 @media (max-width: 760px) { .button-row { justify-content: center; } }
@@ -220,6 +235,7 @@ nav {
 
 .section-head { max-width: 60ch; margin-bottom: 32px; }
 .section-head.center { max-width: 60ch; margin-left: auto; margin-right: auto; text-align: center; }
+.section-head.center p { margin-left: auto; margin-right: auto; }
 
 .page-hero {
   max-width: var(--max);
@@ -227,11 +243,20 @@ nav {
   padding: 48px 24px 8px;
 }
 
+/* accent band — a warm purple wash to separate this section from the page,
+   without ever going back to a bright white panel */
 .strip {
-  background: var(--ink);
-  color: #F4EFFF;
+  background: linear-gradient(180deg, var(--brand-deep), #4A3170);
+  color: var(--ink);
 }
-.strip .section-head p { color: #CBBFEA; }
+.strip .eyebrow { color: var(--amber); }
+.strip .section-head p { color: #E2D6F7; }
+.strip .card {
+  background: rgba(255,255,255,.07);
+  border-color: rgba(255,255,255,.16);
+}
+.strip .card h3 { color: #FBF7FF; }
+.strip .card p { color: #DCCBF2; }
 
 /* card grid */
 .grid {
@@ -250,16 +275,16 @@ nav {
 }
 
 .card h3 { font-size: 1.15rem; margin-bottom: 8px; }
-.card p { color: var(--ink-soft); font-size: .96rem; margin-bottom: 0; }
+.card p { color: var(--ink-soft); font-size: .98rem; margin-bottom: 0; }
 
 /* tool tag chips used on services page */
 .tag-list { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
 .tag-list li {
   font-family: var(--font-mono);
   font-size: .82rem;
-  background: var(--line-soft);
+  background: var(--surface-alt);
   border: 1px solid var(--line);
-  color: var(--brand-dark);
+  color: var(--brand);
   padding: 5px 10px;
   border-radius: 100px;
 }
@@ -298,12 +323,13 @@ nav {
   padding-bottom: 14px;
   margin-bottom: 18px;
   font-family: var(--font-mono);
+  color: var(--ink-soft);
 }
 
 .ticket-rate {
   font-family: var(--font-mono);
   font-size: 2.6rem;
-  color: var(--brand-dark);
+  color: var(--brand);
 }
 .ticket-rate span { font-size: 1rem; color: var(--ink-soft); }
 
@@ -311,19 +337,19 @@ nav {
   display: flex;
   justify-content: space-between;
   gap: 20px;
-  padding: 10px 0;
+  padding: 12px 0;
   border-bottom: 1px solid var(--line-soft);
-  font-size: .96rem;
+  font-size: .98rem;
 }
 .line-item:last-child { border-bottom: none; }
 .line-item dt { color: var(--ink); font-weight: 600; }
 .line-item dd { margin: 0; color: var(--ink-soft); text-align: right; }
 
 /* schedule table */
-.schedule { width: 100%; border-collapse: collapse; font-size: .96rem; }
+.schedule { width: 100%; border-collapse: collapse; font-size: .98rem; }
 .schedule th, .schedule td {
   text-align: left;
-  padding: 10px 12px;
+  padding: 12px;
   border-bottom: 1px solid var(--line-soft);
 }
 .schedule th { font-family: var(--font-mono); font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-soft); }
@@ -333,15 +359,17 @@ details.faq-item {
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  padding: 16px 20px;
+  padding: 18px 22px;
   margin-bottom: 12px;
 }
 details.faq-item summary {
   cursor: pointer;
   font-weight: 700;
   font-family: var(--font-display);
-  font-size: 1.05rem;
+  font-size: 1.08rem;
+  color: var(--ink);
 }
+details.faq-item summary::marker { color: var(--brand); }
 details.faq-item p { margin-top: 12px; color: var(--ink-soft); }
 
 /* gallery */
@@ -351,6 +379,7 @@ details.faq-item p { margin-top: 12px; color: var(--ink-soft); }
   padding: 60px 24px;
   text-align: center;
   color: var(--ink-soft);
+  background: var(--surface);
 }
 
 /* contact */
@@ -371,10 +400,12 @@ details.faq-item p { margin-top: 12px; color: var(--ink-soft); }
 .contact-card a.button { margin-top: 14px; }
 
 .note {
-  font-size: .88rem;
+  font-size: .9rem;
   color: var(--ink-soft);
+  background: var(--surface-alt);
   border-left: 3px solid var(--amber);
-  padding: 4px 0 4px 14px;
+  padding: 10px 16px;
+  border-radius: 0 8px 8px 0;
   margin-top: 18px;
 }
 
@@ -384,6 +415,19 @@ footer {
   padding: 30px 24px;
   text-align: center;
   color: var(--ink-soft);
-  font-size: .88rem;
+  font-size: .9rem;
 }
 footer a { color: var(--ink-soft); }
+
+/* ==========================================================================
+   Accessibility helpers
+   ========================================================================== */
+:focus-visible {
+  outline: 3px solid var(--amber);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
