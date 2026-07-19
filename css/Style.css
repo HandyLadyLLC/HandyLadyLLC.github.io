@@ -202,17 +202,19 @@ nav {
 .button {
   display: inline-block;
   margin-top: 10px;
-  background: var(--brand);
-  color: #23163B;
-  padding: 15px 30px;
+  background: var(--brand-dark);
+  color: var(--ink);
+  padding: 16px 34px;
   text-decoration: none;
   border-radius: 8px;
-  font-size: 1.05rem;
+  font-size: 1.2rem;
   font-weight: 700;
   border: none;
   cursor: pointer;
+  min-width: 240px;
+  text-align: center;
 }
-.button:hover { background: var(--amber); color: #2B1B00; }
+.button:hover { background: var(--brand-deep); color: var(--ink); }
 
 .button.secondary {
   background: transparent;
@@ -246,7 +248,7 @@ nav {
 /* accent band — a warm purple wash to separate this section from the page,
    without ever going back to a bright white panel */
 .strip {
-  background: #523559;
+  background: #4D3C54;
   color: var(--ink);
 }
 .strip .eyebrow { color: var(--amber); }
