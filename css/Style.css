@@ -105,9 +105,9 @@ nav {
   font-size: 1.2rem;
 }
 
-.brand img { height: 82px; width: auto; border-radius: 6px; }
+.brand img { height: 90px; width: auto; border-radius: 6px; }
 @media (min-width: 761px) {
-  .brand img { height: 99px; }
+  .brand img { height: 113px; }
 }
 .nav-links {
   display: flex;
