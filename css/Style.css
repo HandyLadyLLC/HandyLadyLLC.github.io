@@ -135,7 +135,7 @@ nav {
   background: var(--amber);
   color: #2B1B00;
 }
-.nav-links .cta:hover { background: var(--amber-dark); color: #2B1B00; }
+.nav-links .cta:hover { background: var(--amber-dark); color: #7f6899; }
 
 .nav-toggle {
   display: none;
