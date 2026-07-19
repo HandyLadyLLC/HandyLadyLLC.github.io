@@ -252,11 +252,11 @@ nav {
 .strip .eyebrow { color: var(--amber); }
 .strip .section-head p { color: #E2D6F7; }
 .strip .card {
-  background: rgba(255,255,255,.07);
-  border-color: rgba(255,255,255,.16);
+  background: #2B2740;
+  border: 1px solid #463C63;
 }
-.strip .card h3 { color: #FBF7FF; }
-.strip .card p { color: #DCCBF2; }
+.strip .card h3 { color: #F4EFFF; }
+.strip .card p { color: #CBBFEA; }
 
 /* card grid */
 .grid {
