@@ -11,7 +11,7 @@
   --surface-alt: #332C4A;
   --ink: #F1ECFA;
   --ink-soft: #C9BFE0;
-  --brand: #578A74;
+  --brand: #B79FE0;
   /* Buttons */
   --brand-dark: #51406E;
  /* Buttons Highlighted or Button Font? */
@@ -122,7 +122,7 @@ nav {
   color: var(--ink);
   text-decoration: none;
   font-weight: 600;
-  font-size: .95rem;
+  font-size: 1.05rem;
   padding: 8px 12px;
   border-radius: 6px;
 }
@@ -207,7 +207,7 @@ nav {
   display: inline-block;
   margin-top: 10px;
   background: var(--brand-dark);
-  color: #4D3C54;
+  color: var(--ink);
   padding: 16px 34px;
   text-decoration: none;
   border-radius: 8px;
