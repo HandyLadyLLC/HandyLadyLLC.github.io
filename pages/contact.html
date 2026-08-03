@@ -8,31 +8,188 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Work+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/Style.css">
+
+<!-- Web3Forms native hCaptcha anti-spam script -->
+<script src="https://web3forms.com" async defer></script>
 </head>
 <body>
-
+  
 <header class="site-header">
 <nav>
-  <a class="brand" href="../index.html">
-    <img src="../Images/HandyLadyLLC_Logo.png" alt="Handy Lady LLC logo">
-    Handy Lady LLC
+  <a class="brand" href="index.html">
+    <img class="logo-mark" src="Images/HandyLadyLLC_Logo_Compact_No-Name.png" alt="Handy Lady LLC logo mark">
+    <img class="logo-name" src="Images/HandyLadyLLC_Logo_Name_Only.png" alt="Handy Lady LLC">
   </a>
   <button class="nav-toggle" aria-label="Menu">☰</button>
   <ul class="nav-links">
-    <li><a href="../index.html">Home</a></li>
-    <li><a href="services.html">Services</a></li>
-    <li><a href="rates.html">Rates</a></li>
-    <li><a href="gallery.html">Gallery</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="faq.html">FAQ</a></li>
-    <li><a class="cta" href="contact.html">Need a Hand?</a></li>
+    <li><a href="pages/about.html">About</a></li>
+    <li><a href="pages/services.html">Services</a></li>
+    <li><a href="pages/rates.html">Rates</a></li>
+    <li><a href="pages/Schedule.html">Schedule</a></li>
+    <li><a href="pages/follow.html">Follow</a></li>
+    <li><a href="pages/gallery.html">Gallery</a></li>
+    <li><a class="cta" href="pages/contact.html">Need a Hand?</a></li>
   </ul>
 </nav>
 </header>
 
+<!-- Minimal Layout Container for Form Formats -->
+<style>
+    .webform-section {
+        padding: var(--section-padding, 60px 20px 20px 20px);
+        max-width: 650px;
+        margin: 0 auto;
+    }
+    .form-group {
+        margin-bottom: 20px;
+    }
+    .form-label {
+        display: block;
+        margin-bottom: 6px;
+        font-weight: 600;
+    }
+    .form-control {
+        width: 100%;
+        padding: 12px;
+        box-sizing: border-box;
+    }
+    textarea.form-control {
+        resize: vertical;
+        min-height: 130px;
+    }
+    .radio-group, .select-group {
+        display: block;
+    }
+    .radio-label {
+        display: inline-flex;
+        align-items: center;
+        margin-right: 20px;
+        font-weight: 400;
+        cursor: pointer;
+    }
+    .radio-label input {
+        margin-right: 6px;
+    }
+    .captcha-group {
+        margin: 20px 0;
+        display: flex;
+        justify-content: flex-start;
+    }
+    .form-submit-container {
+        margin-top: 24px;
+    }
+</style>
+
+<main class="webform-section">
+    <div class="form-header">
+        <span class="eyebrow">Message</span>
+        <h2>Need a hand? </h2>
+        <p style="color:var(--ink-soft); margin-bottom: 24px;">Fill out the form below to let me know what you need and I'll get back to you as soon as I can.</p>
+    </div>
+
+    <!-- Web3Forms Custom Processing Endpoint -->
+    <form action="https://web3forms.com" method="POST" class="contact-form">
+        
+        <!-- Secure Access Key Routing Identification -->
+        <input type="hidden" name="access_key" value="a3cb930e-8cb9-4514-9f7f-7fa160f9bbb8">
+        
+        <!-- DYNAMIC CUSTOM SUBJECT LINE -->
+        <input type="hidden" name="subject" value="Contact Request from {{name}}">
+
+ <!-- Basic Client Details -->
+        <div class="form-group">
+            <label class="form-label" for="name">Full Name</label>
+            <input class="form-control" type="text" id="name" name="name" required placeholder="Jane Doe">
+        </div>
+
+        <div class="form-group">
+            <label class="form-label" for="email">Email Address</label>
+            <input class="form-control" type="email" id="email" name="email" required placeholder="jane@example.com">
+        </div>
+
+        <!-- Phone Number Field -->
+        <div class="form-group">
+            <label class="form-label" for="phone">Phone Number</label>
+            <input class="form-control" type="tel" id="phone" name="phone" required placeholder="(813) 555-0199">
+        </div>
+
+        <!-- Property Location Address Field -->
+        <div class="form-group">
+            <label class="form-label" for="address">Property Address</label>
+            <input class="form-control" type="text" id="address" name="address" required placeholder="123 Main St, St. Petersburg, FL">
+        </div>
+
+        <!-- Preferred Contact Method Selection Fields -->
+        <div class="form-group">
+            <span class="form-label">Preferred Contact Method</span>
+            <div class="radio-group">
+                <label class="radio-label">
+                    <input type="radio" name="preferred_contact" value="Text" checked> Text
+                </label>
+                <label class="radio-label">
+                    <input type="radio" name="preferred_contact" value="Call"> Call
+                </label>
+                <label class="radio-label">
+                    <input type="radio" name="preferred_contact" value="Email"> Email
+                </label>
+            </div>
+        </div>
+
+        <!-- Project Overview Details -->
+        <div class="form-group">
+            <label class="form-label" for="project_type">Subject / Project Type</label>
+            <input class="form-control" type="text" id="project_type" name="project_type" required placeholder="e.g., Drywall repair, shelving install">
+        </div>
+
+        <!-- Desired Timeline Select Dropdowns -->
+        <div class="form-group">
+            <label class="form-label" for="start_date">Desired Start Date</label>
+            <select class="form-control select-group" id="start_date" name="desired_start_date" required>
+                <option value="As soon as possible">As soon as possible</option>
+                <option value="This week">This week</option>
+                <option value="This month">This month</option>
+                <option value="Any time">Any time</option>
+                <option value="Other">Other</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label class="form-label" for="completion_date">Desired Completion Date</label>
+            <select class="form-control select-group" id="completion_date" name="desired_completion_date" required>
+                <option value="As soon as possible">As soon as possible</option>
+                <option value="This week">This week</option>
+                <option value="This month">This month</option>
+                <option value="Any time">Any time</option>
+                <option value="Other">Other</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label class="form-label" for="message">Message / Project Details</label>
+            <textarea class="form-control" id="message" name="message" required placeholder="Tell us a bit about what you need a hand with..."></textarea>
+        </div>
+
+        <!-- Silent Bot Trap Field -->
+        <input type="text" name="_gotcha" style="display:none">
+
+        <!-- Visual hCaptcha Checkbox Module -->
+        <div class="captcha-group">
+            <div class="h-captcha" data-captcha="true"></div>
+        </div>
+
+        <!-- Uses your existing .cta class styling to match your nav header button -->
+        <div class="form-submit-container">
+            <button type="submit" class="cta" style="width: 100%; border: none; cursor: pointer;">Send Message</button>
+        </div>
+
+    </form>
+</main>
+
+
+  
 <div class="page-hero">
   <span class="eyebrow">Contact</span>
-  <h1>Need a hand?</h1>
+  <h1>Contact Info</h1>
   <p class="tagline" style="max-width:60ch;color:var(--ink-soft);">
     Reach out however's easiest. 
   </p>
@@ -78,10 +235,8 @@
 
 <footer>
   <p>Handy Lady LLC &mdash; St. Petersburg, FL </p>
-  <p>&copy; <span id="year"></span> Handy Lady LLC. All rights reserved.</p>
+  <p>&copy; 2025 Handy Lady LLC. All rights reserved.</p>
 </footer>
 
-<script src="../js/main.js"></script>
-<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 </body>
 </html>
