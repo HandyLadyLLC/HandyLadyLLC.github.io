@@ -90,25 +90,23 @@
     .form-submit-container {
         margin-top: 24px;
     }
-    /* Prompts button to stretch tall with extra top/bottom padding overrides */
-    .submit-btn-tall {
+    /* Inherits your native .button styling layout with custom height constraints */
+    .submit-btn-scaled {
         width: 100%;
-        border: none;
+        padding-top: 18px;    
+        padding-bottom: 18px; 
         cursor: pointer;
-        padding: 24px 14px; /* Double padding for vertical layout expansion */
-        font-size: 18px;    /* Slightly larger text to match size proportions */
     }
 </style>
-
 
 <main class="webform-section">
     <div class="form-header">
         <span class="eyebrow">Message</span>
-        <h2>Need a hand? </h2>
-        <p style="color:var(--ink-soft); margin-bottom: 24px;">Fill out the form below to let me know what you need and I'll get back to you as soon as I can.</p>
+        <h2>Need a Hand?</h2>
+        <p style="color:var(--ink-soft); margin-bottom: 24px; max-width: 60ch;">Fill out the form below to let me know what you need and I'll get back to you as soon as I can.</p>
     </div>
 
-   <!-- Web3Forms Custom Processing Endpoint -->
+    <!-- Web3Forms Custom Processing Endpoint -->
     <form action="https://web3forms.com" method="POST" class="contact-form">
         
         <!-- Secure Access Key Routing Identification -->
@@ -148,10 +146,10 @@
                     <input type="radio" name="preferred_contact" value="Text" checked> Text
                 </label>
                 <label class="radio-label">
-                    <input type="radio" name="preferred_contact" value="Call"> Call
+                    <input type="radio" name="preferred_contact" value="Email"> Email
                 </label>
                 <label class="radio-label">
-                    <input type="radio" name="preferred_contact" value="Email"> Email
+                    <input type="radio" name="preferred_contact" value="Call"> Call
                 </label>
             </div>
         </div>
@@ -159,35 +157,34 @@
         <!-- Project Overview Details -->
         <div class="form-group">
             <label class="form-label" for="project_type">Subject / Project Type</label>
-            <input class="form-control" type="text" id="project_type" name="project_type" required placeholder="e.g., Drywall repair, shelving install">
+            <input class="form-control" type="text" id="project_type" name="project_type" required placeholder="e.g., Room painting, TV mounting, picture hanging, furniture assembly">
         </div>
 
         <!-- Desired Timeline Select Dropdowns -->
         <div class="form-group">
             <label class="form-label" for="start_date">Desired Start Date</label>
             <select class="form-control select-group" id="start_date" name="desired_start_date" required>
-                <option value="As soon as possible">As soon as possible</option>
-                <option value="This week">This week</option>
-                <option value="This month">This month</option>
                 <option value="Any time">Any time</option>
-                <option value="Other">Other</option>
+                <option value="This month">This month</option>
+                <option value="This week">This week</option>
+                <option value="Other (See Project Details)">Other (See Project Details)</option>
             </select>
         </div>
 
         <div class="form-group">
             <label class="form-label" for="completion_date">Desired Completion Date</label>
             <select class="form-control select-group" id="completion_date" name="desired_completion_date" required>
-                <option value="As soon as possible">As soon as possible</option>
-                <option value="This week">This week</option>
-                <option value="This month">This month</option>
                 <option value="Any time">Any time</option>
-                <option value="Other">Other</option>
+                <option value="This month">This month</option>
+                <option value="This week">This week</option>
+                <option value="Other (See Project Details)">Other (See Project Details)</option>
             </select>
         </div>
 
+        <!-- Message Box -->
         <div class="form-group">
             <label class="form-label" for="message">Message / Project Details</label>
-            <textarea class="form-control" id="message" name="message" required placeholder="Tell us a bit about what you need a hand with..."></textarea>
+            <textarea class="form-control" id="message" name="message" required placeholder="Tell me what you need a hand with"></textarea>
         </div>
 
         <!-- Silent Bot Trap Field -->
@@ -198,16 +195,13 @@
             <div class="h-captcha" data-captcha="true"></div>
         </div>
 
-        <!-- Merges your local .cta buttons with the new height rules -->
+        <!-- Form Button updated to use the .button class structure from your cards -->
         <div class="form-submit-container">
-            <button type="submit" class="cta submit-btn-tall">Send Message</button>
+            <button type="submit" class="button submit-btn-scaled">Send Message</button>
         </div>
 
     </form>
 </main>
-
-
-
   
 <div class="page-hero">
   <span class="eyebrow">Contact</span>
