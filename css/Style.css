@@ -305,6 +305,22 @@ nav {
   border-radius: 100px;
 }
 
+/* Targets only cards that explicitly carry the contact-card-centered class name */
+.card.contact-card-centered {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Ensures the internal button block stays anchored to the center line */
+.card.contact-card-centered .button {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
 /* ==========================================================================
    Work-order ticket (rates page signature element)
    ========================================================================== */
