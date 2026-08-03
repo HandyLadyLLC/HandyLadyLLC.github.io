@@ -108,10 +108,10 @@ nav {
 
 .brand img { width: auto; border-radius: 6px; }
 .brand .logo-mark { height: 46px; }
-.brand .logo-name { height: 12px; margin-left: 2px; }
+.brand .logo-name { height: 28px; margin-left: 2px; }
 @media (min-width: 761px) {
   .brand .logo-mark { height: 56px; }
-  .brand .logo-name { height: 15px; }
+  .brand .logo-name { height: 34px; }
 }
 
 .nav-links {
