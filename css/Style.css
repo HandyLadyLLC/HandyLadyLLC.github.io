@@ -57,6 +57,9 @@ h1, h2, h3 {
   color: var(--ink);
 }
 
+h2 { font-size: 1.35rem; }
+h3 { font-size: 1.2rem; }
+
 p {
   margin: 0 0 1.1em;
   max-width: 68ch;
@@ -95,7 +98,7 @@ nav {
 .brand {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   text-decoration: none;
   color: var(--ink);
   font-family: var(--font-display);
@@ -103,9 +106,12 @@ nav {
   font-size: 1.2rem;
 }
 
-.brand img { height: 90px; width: auto; border-radius: 6px; }
+.brand img { width: auto; border-radius: 6px; }
+.brand .logo-mark { height: 46px; }
+.brand .logo-name { height: 12px; margin-left: 2px; }
 @media (min-width: 761px) {
-  .brand img { height: 113px; }
+  .brand .logo-mark { height: 56px; }
+  .brand .logo-name { height: 15px; }
 }
 
 .nav-links {
@@ -122,6 +128,7 @@ nav {
   text-decoration: none;
   font-weight: 600;
   font-size: 1.05rem;
+  line-height: 1.4;
   padding: 8px 12px;
   border-radius: 6px;
 }
@@ -172,7 +179,7 @@ nav {
 .hero {
   max-width: var(--max);
   margin: 0 auto;
-  padding: 64px 24px 40px;
+  padding: 40px 24px 24px;
   display: grid;
   grid-template-columns: 1.1fr .9fr;
   gap: 40px;
@@ -180,12 +187,12 @@ nav {
 }
 
 @media (max-width: 760px) {
-  .hero { grid-template-columns: 1fr; padding-top: 40px; text-align: center; }
+  .hero { grid-template-columns: 1fr; padding-top: 32px; text-align: center; }
   .hero-art { order: -1; margin: 0 auto; max-width: 260px; }
   .hero p { margin-left: auto; margin-right: auto; }
 }
 
-.hero h1 { font-size: clamp(2.2rem, 5vw, 3.2rem); }
+.hero h1 { font-size: clamp(1.9rem, 4.2vw, 2.6rem); }
 
 .hero .tagline {
   font-size: 1.2rem;
@@ -206,14 +213,15 @@ nav {
   margin-top: 10px;
   background: var(--brand-dark);
   color: #FFFFFF;
-  padding: 16px 34px;
+  padding: 8px 26px;
   text-decoration: none;
   border-radius: 8px;
-  font-size: 1.2rem;
+  font-size: 1.05rem;
+  line-height: 1.4;
   font-weight: 700;
   border: none;
   cursor: pointer;
-  min-width: 240px;
+  min-width: 220px;
   text-align: center;
 }
 .button:hover { background: var(--brand-deep); color: #FFFFFF; }
@@ -225,8 +233,7 @@ nav {
 }
 .button.secondary:hover { background: var(--line-soft); color: var(--brand); }
 
-.button-row { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 12px; }
-@media (max-width: 760px) { .button-row { justify-content: center; } }
+.button-row { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 12px; justify-content: center; }
 
 /* ==========================================================================
    Sections / generic
@@ -234,8 +241,10 @@ nav {
 .section {
   max-width: var(--max);
   margin: 0 auto;
-  padding: 32px 24px;
+  padding: 16px 24px;
 }
+
+.section.strip { padding: 32px 24px; }
 
 .section-head { max-width: 60ch; margin-bottom: 16px; }
 .section-head.center { max-width: 60ch; margin-left: auto; margin-right: auto; text-align: center; }
@@ -254,6 +263,7 @@ nav {
   color: var(--ink);
 }
 .strip .eyebrow { color: var(--amber); }
+.strip .section-head h2 { font-size: 1.6rem; }
 .strip .section-head p { color: #E2D6F7; }
 .strip .card {
   background: #2B2740;
@@ -265,7 +275,7 @@ nav {
 /* card grid */
 .grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
 }
 @media (max-width: 900px) { .grid { grid-template-columns: repeat(2, 1fr); } }
@@ -278,8 +288,9 @@ nav {
   padding: 24px;
 }
 
-.card h3 { font-size: 1.15rem; margin-bottom: 8px; }
+.card h3 { font-size: 1.35rem; text-align: center; margin-bottom: 8px; }
 .card p { color: var(--ink-soft); font-size: .98rem; margin-bottom: 0; }
+.card p + p { margin-top: 0.8em; }
 
 /* tool tag chips used on services page */
 .tag-list { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
