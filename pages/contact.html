@@ -52,6 +52,18 @@
         width: 100%;
         padding: 12px;
         box-sizing: border-box;
+        background-color: #000000; /* Sets input fields background to black */
+        color: #ffffff;            /* Sets text typed by user to white */
+        border: 1px solid var(--ink-soft, #cbd5e1); /* Subtle border contour */
+    }
+    /* Styles placeholder text visibility inside dark fields */
+    .form-control::placeholder {
+        color: rgba(255, 255, 255, 0.6);
+        opacity: 1;
+    }
+    /* Adjusts the dropdown selection arrow color on dark backgrounds */
+    select.form-control {
+        color: #ffffff;
     }
     textarea.form-control {
         resize: vertical;
@@ -78,7 +90,16 @@
     .form-submit-container {
         margin-top: 24px;
     }
+    /* Prompts button to stretch tall with extra top/bottom padding overrides */
+    .submit-btn-tall {
+        width: 100%;
+        border: none;
+        cursor: pointer;
+        padding: 24px 14px; /* Double padding for vertical layout expansion */
+        font-size: 18px;    /* Slightly larger text to match size proportions */
+    }
 </style>
+
 
 <main class="webform-section">
     <div class="form-header">
@@ -87,7 +108,7 @@
         <p style="color:var(--ink-soft); margin-bottom: 24px;">Fill out the form below to let me know what you need and I'll get back to you as soon as I can.</p>
     </div>
 
-    <!-- Web3Forms Custom Processing Endpoint -->
+   <!-- Web3Forms Custom Processing Endpoint -->
     <form action="https://web3forms.com" method="POST" class="contact-form">
         
         <!-- Secure Access Key Routing Identification -->
@@ -96,7 +117,7 @@
         <!-- DYNAMIC CUSTOM SUBJECT LINE -->
         <input type="hidden" name="subject" value="Contact Request from {{name}}">
 
- <!-- Basic Client Details -->
+        <!-- Basic Client Details -->
         <div class="form-group">
             <label class="form-label" for="name">Full Name</label>
             <input class="form-control" type="text" id="name" name="name" required placeholder="Jane Doe">
@@ -177,13 +198,14 @@
             <div class="h-captcha" data-captcha="true"></div>
         </div>
 
-        <!-- Uses your existing .cta class styling to match your nav header button -->
+        <!-- Merges your local .cta buttons with the new height rules -->
         <div class="form-submit-container">
-            <button type="submit" class="cta" style="width: 100%; border: none; cursor: pointer;">Send Message</button>
+            <button type="submit" class="cta submit-btn-tall">Send Message</button>
         </div>
 
     </form>
 </main>
+
 
 
   
