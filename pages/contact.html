@@ -234,15 +234,85 @@
     </form>
 </main>
   
-<div class="page-hero">
-  <span class="eyebrow">Contact</span>
-  <h1>Reach out however's easiest</h1>
-</div>
-      <a class="button" href="sms:+18134343489">Text (813) 434-3489</a>
-      <a class="button" href="tel:+18134343489">Call (813) 434-3489 (and leave a message)</a>
-      <a class="button" href="mailto:HandyLadyLLC@gmail.com">Email HandyLadyLLC@gmail.com</a>
-      <a class="button" href="https://www.facebook.com/HandyLadyLLC/" target="_blank" rel="noopener">Message HandyLadyLLC on Facebook</a>
+<!-- Layout configuration to center text and stack links on separate lines -->
+<style>
+    .center-hero {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .center-hero .tagline {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .contact-grid-stacked {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px; /* Adjusts vertical breathing room between rows */
+        max-width: 500px;
+        margin: 0 auto;
+        text-align: center;
+    }
+    .contact-card-centered {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .contact-card-centered .button {
+        display: block;
+        width: 100%;
+        max-width: 320px; /* Keeps action links looking neat on wide displays */
+        box-sizing: border-box;
+        margin-top: 12px;
+    }
+</style>
 
+<div class="page-hero center-hero">
+  <span class="eyebrow">Contact</span>
+  <p class="tagline" style="max-width:60ch;color:var(--ink-soft);">
+    Reach out however's easiest. 
+  </p>
+</div>
+
+<div class="section" style="padding-top:12px; padding-bottom: 60px;">
+  <div class="contact-grid-stacked">
+
+    <div class="contact-card-centered">
+      <span class="eyebrow">Text</span>
+      <h3>(813) 434-3489</h3>
+      <a class="button" href="sms:+18134343489">Text Now</a>
+    </div>
+
+    <div class="contact-card-centered">
+      <span class="eyebrow">Call</span>
+      <h3>(813) 434-3489</h3>
+      <p style="color:var(--ink-soft); margin-top: 4px;">Leave a message with what you need help with &mdash; it cuts through the spam and gets a faster reply.</p>
+      <a class="button" href="tel:+18134343489">Call Now</a>
+    </div>
+
+    <div class="contact-card-centered">
+      <span class="eyebrow">Email</span>
+      <h3>HandyLadyLLC@gmail.com</h3>
+      <a class="button" href="mailto:HandyLadyLLC@gmail.com">Send an Email</a>
+    </div>
+
+    <div class="contact-card-centered">
+      <span class="eyebrow">Facebook Messenger</span>
+      <h3>Handy Lady LLC on Facebook</h3>
+      <a class="button" href="https://facebook.com" target="_blank" rel="noopener">Open Facebook Page</a>
+    </div>
+
+    <div class="contact-card-centered">
+      <span class="eyebrow">Service Area</span>
+      <h3>St. Petersburg, FL</h3>
+    </div>
+
+  </div>
+</div>
 <footer>
   <p>Handy Lady LLC &mdash; St. Petersburg, FL </p>
   <p>&copy; 2025 Handy Lady LLC. All rights reserved.</p>
