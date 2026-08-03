@@ -101,7 +101,6 @@
 
 <main class="webform-section">
     <div class="form-header">
-        <span class="eyebrow">Message</span>
         <h2>Need a Hand?</h2>
         <p style="color:var(--ink-soft); margin-bottom: 24px; max-width: 60ch;">Fill out the form below to let me know what you need and I'll get back to you as soon as I can.</p>
     </div>
@@ -160,30 +159,62 @@
             <input class="form-control" type="text" id="project_type" name="project_type" required placeholder="e.g., Room painting, TV mounting, picture hanging, furniture assembly">
         </div>
 
-        <!-- Desired Timeline Select Dropdowns -->
+      <!-- Desired Start Date (Updated to Radio Button Stack with Inline Date Selector) -->
         <div class="form-group">
-            <label class="form-label" for="start_date">Desired Start Date</label>
-            <select class="form-control select-group" id="start_date" name="desired_start_date" required>
-                <option value="Any time">Any time</option>
-                <option value="This month">This month</option>
-                <option value="This week">This week</option>
-                <option value="Other (See Project Details)">Other (See Project Details)</option>
-            </select>
+            <span class="form-label">Desired Start Date</span>
+            <div class="radio-group-stack">
+                <label class="radio-label">
+                    <input type="radio" name="desired_start_date" value="As soon as possible" checked> As soon as possible
+                </label>
+                <label class="radio-label">
+                    <input type="radio" name="desired_start_date" value="This week"> This week
+                </label>
+                <label class="radio-label">
+                    <input type="radio" name="desired_start_date" value="This month"> This month
+                </label>
+                <label class="radio-label">
+                    <input type="radio" name="desired_start_date" value="This year"> This year
+                </label>
+                <label class="radio-label">
+                    <input type="radio" name="desired_start_date" value="Any time"> Any time
+                </label>
+                <label class="radio-label">
+                    <input type="radio" name="desired_start_date" value="Specific Date" id="start_date_specific_radio"> This date:
+                    <input class="inline-date-picker" type="date" name="custom_start_date" aria-label="Custom specific start date">
+                </label>
+            </div>
         </div>
 
+         <!-- Desired Completion Date (Updated to perfectly match Desired Start Date layout) -->
         <div class="form-group">
-            <label class="form-label" for="completion_date">Desired Completion Date</label>
-            <select class="form-control select-group" id="completion_date" name="desired_completion_date" required>
-                <option value="Any time">Any time</option>
-                <option value="This month">This month</option>
-                <option value="This week">This week</option>
-                <option value="Other (See Project Details)">Other (See Project Details)</option>
-            </select>
+            <span class="form-label">Desired Completion Date</span>
+            <div class="radio-group-stack">
+                <label class="radio-label">
+                    <input type="radio" name="desired_completion_date" value="As soon as possible" checked> As soon as possible
+                </label>
+                <label class="radio-label">
+                    <input type="radio" name="desired_completion_date" value="This week"> This week
+                </label>
+                <label class="radio-label">
+                    <input type="radio" name="desired_completion_date" value="This month"> This month
+                </label>
+                <label class="radio-label">
+                    <input type="radio" name="desired_completion_date" value="This year"> This year
+                </label>
+                <label class="radio-label">
+                    <input type="radio" name="desired_completion_date" value="Any time"> Any time
+                </label>
+                <label class="radio-label">
+                    <input type="radio" name="desired_completion_date" value="Specific Date"> This date:
+                    <input class="inline-date-picker" type="date" name="custom_completion_date" aria-label="Custom specific completion date">
+                </label>
+            </div>
         </div>
+
 
         <!-- Message Box -->
-        <div class="form-group">
-            <label class="form-label" for="message">Message / Project Details</label>
+        <div class="form-group-tight">
+            <label class="form-label" for="message">Project Details</label>
             <textarea class="form-control" id="message" name="message" required placeholder="Tell me what you need a hand with"></textarea>
         </div>
 
