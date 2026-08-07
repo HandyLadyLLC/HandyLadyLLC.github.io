@@ -255,6 +255,7 @@ nav {
   max-width: var(--max);
   margin: 0 auto;
   padding: 48px 24px 8px;
+  text-align: center;
 }
 
 /* accent band — a warm purple wash to separate this section from the page,
